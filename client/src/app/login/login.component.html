@@ -1,0 +1,6 @@
+<h1>Hello!</h1>
+<h2>Please enter your name to join and share your ideas</h2>
+<form (submit)=submit()>
+  <input type="text" (input)=input() name="user_name" [(ngModel)]="user_name">
+  <input type="submit" value="Enter" [disabled]="submitDisabled">
+</form>
