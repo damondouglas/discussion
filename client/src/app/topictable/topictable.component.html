@@ -1,0 +1,13 @@
+<table>
+    <tr>
+      <th>Category</th>
+      <th>Title</th>
+      <th>User</th>
+      <th>Posts</th>
+    </tr>
+  <tr *ngFor="let topic of topics">
+    <td>{{topic.category}}</td>
+    <td><a [routerLink]="['/topic', topic._id]">{{topic.title}}</a></td>
+    <td><a [routerLink]="['/user',topic.user_id]">{{users[topic.user_id]}}</a></td>
+  </tr>
+</table>

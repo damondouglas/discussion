@@ -7,12 +7,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserService } from './api/user.service'
+import { TopicService } from './api/topic.service';
+import { TopictableComponent } from './topictable/topictable.component';
+import { TopicpageComponent } from './topicpage/topicpage.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopictableComponent,
+    TopicpageComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,7 @@ import { UserService } from './api/user.service'
     FormsModule,
     HttpModule
   ],
-  providers: [UserService],
+  providers: [UserService, TopicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

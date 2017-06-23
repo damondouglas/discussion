@@ -19,4 +19,16 @@ export class UserService {
     .map(data => data.json())
     .toPromise()
   }
+
+  load(id: string) {
+    return this.http.get('/user?user_id=' + id)
+    .map(data => data.json())
+    .toPromise()
+  }
+
+  list() {
+    return this.http.get('/user/list')
+    .map(data => data.json())
+    .toPromise()
+  }
 }

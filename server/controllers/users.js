@@ -33,6 +33,37 @@ const user = {
                res.status(500).json(e)
            }
        }
+   ),
+   getById: async (
+       (req, res) => {
+           let user_id = req.query.user_id
+           if (user_id) {
+               try {
+                    let user = await (
+                        User.findOne({
+                            "_id": user_id
+                        })
+                    )
+                    res.json(user)
+               } catch(e) {
+                   res.status(500).json(e)
+               }
+           } else {
+               res.status(401).json("missing user_id")
+           }
+       }
+   ),
+   list: async (
+       (req, res) => {
+           try {
+               let userS = await (
+                   User.find()
+               )
+               res.json(userS)
+           } catch(e) {
+               res.status(500).json(e)
+           }
+       }
    )
 }
 

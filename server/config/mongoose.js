@@ -6,3 +6,4 @@
  mongoose.connect(URL)
 
  require('../models/user')
+ require('../models/topic')

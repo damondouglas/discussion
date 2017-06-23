@@ -1,3 +1,36 @@
-<p>
-  dashboard works!
-</p>
+<header>
+  <h1>Welcome {{user_name}}!</h1>
+  <div class="search">
+    <input type="text">
+    <button>Search</button>
+  </div>
+</header>
+<div class="table">
+  <app-topictable></app-topictable>
+</div>
+<div class="form">
+  <h2>Add a new topic</h2>
+  <form (submit)=submit()>
+    <div class="title">
+      <label for="title">Topic:</label>
+      <input type="text" name="title" [(ngModel)]="title">
+    </div>
+    <div class="description">
+      <label for="description">Description:</label>
+      <input type="text" name="description" [(ngModel)]="description">
+    </div>
+    <div class="category">
+      <label for="category">Category:</label>
+      <select name="category" [(ngModel)]="category">
+        <option value="Ruby on Rails">Ruby on Rails</option>
+        <option value="MySQL">MySQL</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Html">HTML</option>
+        <option value="python">Python</option>
+      </select>
+    </div>
+    <div class="submit">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
